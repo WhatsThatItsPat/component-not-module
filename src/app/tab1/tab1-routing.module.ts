@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PageAsComponentComponent } from './page-as-component/page-as-component.component';
 import { PageWithModulePage } from './page-with-module/page-with-module.page';
 import { Tab1Page } from './tab1.page';
 
@@ -15,7 +16,11 @@ const routes: Routes = [
   {
     path: 'direct-to-page-in-module',
     component: PageWithModulePage
-  }
+  },
+  {
+    path: 'page-as-component',
+    component: PageAsComponentComponent
+  },
 ];
 
 @NgModule({
