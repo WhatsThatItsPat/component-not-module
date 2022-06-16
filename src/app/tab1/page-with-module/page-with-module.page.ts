@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-page-with-module',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageWithModulePage implements OnInit {
 
-  constructor() { }
+  whatAmI$ = this.activatedRoute.data.pipe(
+    map(data => data.whatAmI)
+  );
+
+  constructor(
+    private activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit() {
   }

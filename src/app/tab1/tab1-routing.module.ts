@@ -11,11 +11,17 @@ const routes: Routes = [
   },
   {
     path: 'page-with-module',
-    loadChildren: () => import('./page-with-module/page-with-module.module').then( m => m.PageWithModulePageModule)
+    loadChildren: () => import('./page-with-module/page-with-module.module').then( m => m.PageWithModulePageModule),
+    data: {
+      whatAmI: 'I am a page lazy loaded with loadChildren.'
+    }
   },
   {
     path: 'direct-to-page-in-module',
-    component: PageWithModulePage
+    component: PageWithModulePage,
+    data: {
+      whatAmI: 'I am a page within a module, but loaded directly.'
+    }
   },
   {
     path: 'page-as-component',
